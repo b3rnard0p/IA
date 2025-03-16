@@ -19,22 +19,6 @@ Os algoritmos de busca e otimização são fundamentais na área de Inteligênci
   - Completa (garante encontrar solução se existir).
 - **Desvantagens:**
   - Alto consumo de memória, já que precisa armazenar muitos nós simultaneamente.
-
-#### Fluxograma:
-
-[Estado Inicial]
-       |
-   [Fila de Nós]
-       |
-[Expandir Primeiro Nó]
-       |
-[Filhos => Fila]
-       |
-[Objetivo?]---Não--->[Expandir próximo]
-       |
-      Sim
-[Solução encontrada]
-
 ---
 
 ### 🔵 Busca em Profundidade (Depth-First Search - DFS)
