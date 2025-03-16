@@ -100,8 +100,3 @@ Exemplos:
 
 - **Função meta ou objetivo**:
   - Função de avaliação que verifica se o estado final foi alcançado ou mede a proximidade da solução ideal.
-
----
-
-> **Nota:** Esse documento traz uma visão geral de conceitos fundamentais de IA. Ideal para estudos introdutórios ou revisões.
-
