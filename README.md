@@ -36,25 +36,25 @@ A IA busca automatizar tarefas cognitivas como:
   - Algoritmos Genéticos
   - Simulated Annealing (Recozimento Simulado)
 
-###Redes Neurais Artificiais (RNA)
+### Redes Neurais Artificiais (RNA)
 
-- Inspiradas no funcionamento do cérebro humano para reconhecimento de padrões, classificação e predição.
+  - Inspiradas no funcionamento do cérebro humano para reconhecimento de padrões, classificação e predição.
   
-###Sistemas Multiagentes
+### Sistemas Multiagentes
 
-- Conjunto de agentes autônomos que interagem em um ambiente para alcançar objetivos individuais ou coletivos.
+  - Conjunto de agentes autônomos que interagem em um ambiente para alcançar objetivos individuais ou coletivos.
 
-###Representação de Conhecimento e Raciocínio
+### Representação de Conhecimento e Raciocínio
 
-- Como representar o conhecimento sobre o mundo (fatos, regras, ontologias) e raciocinar sobre ele (dedução e inferência).
+  - Como representar o conhecimento sobre o mundo (fatos, regras, ontologias) e raciocinar sobre ele (dedução e inferência).
 
-###Processamento de Linguagem Natural (PLN)
+### Processamento de Linguagem Natural (PLN)
 
-- Capacitar sistemas a entender, interpretar e gerar linguagem humana de forma eficiente.
+  - Capacitar sistemas a entender, interpretar e gerar linguagem humana de forma eficiente.
   
-###Aprendizado de Máquina (Machine Learning)
+### Aprendizado de Máquina (Machine Learning)
 
-- Subárea focada em desenvolver algoritmos que permitam aos sistemas aprender a partir de dados.
+  - Subárea focada em desenvolver algoritmos que permitam aos sistemas aprender a partir de dados.
 ---
 
 ## 4) O que é um sistema de comportamento inteligente?
