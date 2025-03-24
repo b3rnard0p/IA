@@ -257,3 +257,67 @@ public class LabirintoObstaculos implements Estado, Heuristica {
         return "Labirinto com duas entradas (E) e uma saída (S). Obstáculos (@).";
     }
 }
+
+/**
+Classe LabirintoObstaculos:
+* 
+A classe LabirintoObstaculos é uma implementação de um labirinto com dois pontos de entrada, um ponto de saída e obstáculos. 
+* Ela implementa a interface Estado e a interface Heuristica, sendo utilizada para representar estados no contexto de um algoritmo de busca.
+* 
+Construtores:
+* 
+LabirintoObstaculos(char m[][], int linhaEntrada1, int colunaEntrada1, int linhaEntrada2, int colunaEntrada2, int linhaSaida, int colunaSaida, String o, int entradaAlvo):
+Este é o construtor principal da classe. Ele recebe uma matriz representando o labirinto (m), as coordenadas 
+* das duas entradas e da saída, uma string de descrição do estado e o índice da entrada alvo (1 ou 2).
+
+LabirintoObstaculos(int dimensao, String o, int porcentagemObstaculos):
+Este é o segundo construtor que cria um labirinto aleatório. Ele recebe a dimensão do labirinto, uma descrição do 
+* estado e a porcentagem de obstáculos. O método gera aleatoriamente as posições das entradas e saída, além de preencher o labirinto com obstáculos.
+
+Métodos:
+* 
+private char[][] clonar(char[][] origem):
+Este método cria uma cópia (clone) da matriz do labirinto. Ele é usado para gerar novos estados do labirinto sem modificar o estado original.
+
+@Override public boolean ehMeta():
+Este método verifica se o estado atual é uma solução (meta). Ele compara a posição de uma das entradas 
+* com a posição da saída, retornando true se as posições coincidirem, dependendo da entrada alvo (1 ou 2).
+
+@Override public int custo():
+Este método retorna o custo de mover-se de um estado para outro. No caso deste labirinto, o custo é sempre 1, 
+* pois cada movimento (independente da direção) tem o mesmo custo.
+
+@Override public int h():
+Este método calcula a heurística (estimativa de custo) para alcançar a saída a partir do estado atual. 
+* Ele usa a distância de Manhattan entre a entrada e a saída, dependendo de qual entrada é a "alvo" (entrada 1 ou entrada 2).
+
+@Override public List<Estado> sucessores():
+Este método gera uma lista de sucessores (novos estados) a partir do estado atual. Ele verifica se os movimentos possíveis 
+* (para cima, baixo, esquerda, direita) não resultam em colidir com um obstáculo, e, caso contrário, adiciona o novo estado à lista de sucessores.
+
+private void gerarMovimentos(List<Estado> visitados, int entrada):
+Este método ajuda a gerar os movimentos possíveis a partir de um estado específico. Ele verifica os quatro 
+* sentidos (cima, baixo, esquerda, direita) e adiciona sucessores válidos à lista de visitados. O movimento é restrito por obstáculos ('@').
+
+private void adicionarSucessor(List<Estado> visitados, int entrada, int novaLinha, int novaColuna, String direcao):
+Este método cria um novo estado, movendo a entrada atual para a nova posição (linha e coluna). O novo estado é adicionado 
+* à lista de sucessores, desde que ainda não tenha sido visitado.
+
+@Override public boolean equals(Object o):
+Este método compara o estado atual com outro objeto. Ele verifica se a matriz de labirinto é idêntica à de outro 
+* estado, realizando a comparação posição por posição.
+
+@Override public int hashCode():
+Este método gera um código de hash para o estado atual. Ele cria um código baseado na matriz do labirinto, permitindo a comparação eficiente entre estados.
+
+@Override public String toString():
+Este método retorna uma representação em string do labirinto, com as coordenadas das entradas e da saída. Ele formata a matriz do labirinto em uma string legível.
+
+public static void main(String[] a):
+Este é o método principal, que executa o programa. Ele solicita ao usuário a dimensão do labirinto, a porcentagem de 
+* obstáculos e os métodos de busca (profundidade ou largura) a serem utilizados para cada entrada. Em seguida, ele resolve 
+* o labirinto para as duas entradas, imprimindo o caminho encontrado ou uma mensagem indicando que não há solução.
+
+@Override public String getDescricao():
+Este método retorna uma descrição do labirinto, informando que ele contém duas entradas (representadas por 'E'), uma saída ('S') e obstáculos ('@').
+* */
