@@ -1,7 +1,6 @@
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
-import busca.Heuristica;
 import busca.BuscaLargura;
 import busca.BuscaProfundidade;
 import busca.Estado;
@@ -9,7 +8,7 @@ import busca.MostraStatusConsole;
 import busca.Nodo;
 import javax.swing.JOptionPane;
 
-public class LabirintoObstaculos implements Estado, Heuristica {
+public class LabirintoObstaculos implements Estado{
     final char matriz[][];
     int linhaEntrada1, colunaEntrada1;
     int linhaEntrada2, colunaEntrada2;
@@ -99,17 +98,7 @@ public class LabirintoObstaculos implements Estado, Heuristica {
     public int custo() {
         return 1;
     }
-
-    @Override
-    public int h() {
-        if (entradaAlvo == 1) {
-            return Math.abs(linhaEntrada1 - linhaSaida) + Math.abs(colunaEntrada1 - colunaSaida);
-        } else if (entradaAlvo == 2) {
-            return Math.abs(linhaEntrada2 - linhaSaida) + Math.abs(colunaEntrada2 - colunaSaida);
-        }
-        return 0;
-    }
-
+    
     @Override
     public List<Estado> sucessores() {
         List<Estado> visitados = new LinkedList<>();
