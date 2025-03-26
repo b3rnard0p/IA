@@ -276,10 +276,6 @@ Este método verifica se o estado atual é uma solução (meta). Ele compara a p
 Este método retorna o custo de mover-se de um estado para outro. No caso deste labirinto, o custo é sempre 1, 
 * pois cada movimento (independente da direção) tem o mesmo custo.
 
-@Override public int h():
-Este método calcula a heurística (estimativa de custo) para alcançar a saída a partir do estado atual. 
-* Ele usa a distância de Manhattan entre a entrada e a saída, dependendo de qual entrada é a "alvo" (entrada 1 ou entrada 2).
-
 @Override public List<Estado> sucessores():
 Este método gera uma lista de sucessores (novos estados) a partir do estado atual. Ele verifica se os movimentos possíveis 
 * (para cima, baixo, esquerda, direita) não resultam em colidir com um obstáculo, e, caso contrário, adiciona o novo estado à lista de sucessores.
