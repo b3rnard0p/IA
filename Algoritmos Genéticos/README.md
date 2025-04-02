@@ -42,3 +42,48 @@ AGs são úteis quando o espaço de busca é **grande e complexo**, onde método
 
 Em resumo, os Algoritmos Genéticos são uma abordagem poderosa para problemas onde **não há uma solução óbvia e exata**, sendo especialmente úteis para problemas de **otimização e busca heurística**. 🚀
 
+# Exemplo de Modelagem
+
+## 🔹 Atributos
+
+- **estadoFinal/restricoes**: Condições que definem uma solução aceitável ou ótima para o problema.
+- **populacao**: Lista de cromossomos (cada cromossomo possui uma palavra ou representação genética e um valor de aptidão).
+- **novaPopulacao**: Lista de cromossomos que estão sendo selecionados, reproduzidos ou mutados para a próxima geração.
+- **tamanhoPopulacao**: Número total de indivíduos na população.
+- **taxaSelecao**: Percentual (geralmente 25% a 40%) dos cromossomos mais aptos selecionados para reprodução.
+- **taxaReproducao**: Percentual (100% - taxaSelecao) de novos indivíduos produzidos a partir dos selecionados.
+- **taxaMutacao**: Probabilidade de um cromossomo sofrer mutação.
+- **qtdGeracoes**: Número máximo de gerações que o algoritmo irá executar.
+
+## 🔹 Fluxo
+
+### Primeira Geração (100% Aleatória)
+1. **GerarPopulacao(populacao, tamanhoPopulacao, estadoFinal)**:  
+   - Cria uma população inicial de cromossomos aleatórios, respeitando as restrições do problema.
+2. **ordenarPopulacao(populacao)**:  
+   - Ordena a população com base na aptidão de cada cromossomo (do mais apto ao menos apto).
+3. **exibirPopulacao(populacao)**:  
+   - Mostra os cromossomos e suas aptidões (opcional para acompanhamento).
+
+### Demais Gerações
+Repetir de **1** até **qtdGeracoes**:
+1. **selecionar(populacao, novaPopulacao, taxaSelecao)** (Método: Torneio):  
+   - Seleciona os melhores cromossomos (com base na taxa de seleção) para compor parte da nova população.
+2. **reproduzir(populacao, novaPopulacao, taxaReproducao, estadoFinal)**:  
+   - Combina cromossomos selecionados (crossover) para gerar novos indivíduos, completando a nova população.
+3. **Verificar mutação (taxaMutacao)**:  
+   - Se aplicável, realiza mutações aleatórias em alguns cromossomos da nova população.
+     - **mutar(novaPopulacao, estadoFinal)**: Aplica pequenas alterações aleatórias em genes dos cromossomos.
+4. **limpar(populacao)**:  
+   - Remove todos os cromossomos da população atual (para preparar a substituição).
+5. **copiar(novaPopulacao, populacao)**:  
+   - Transfere os cromossomos da nova população para a população principal.
+6. **limpar(novaPopulacao)**:  
+   - Reseta a nova população para a próxima iteração.
+7. **ordenarPopulacao(populacao)**:  
+   - Reordena a população atualizada com base na aptidão.
+
+---
+
+Este fluxo ilustra o ciclo evolutivo típico de um Algoritmo Genético, onde a cada geração os indivíduos mais aptos têm maior chance de passar suas características adiante, enquanto operadores genéticos (crossover e mutação) introduzem diversidade para explorar o espaço de soluções. 🧬
+
