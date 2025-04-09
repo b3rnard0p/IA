@@ -6,7 +6,6 @@ def main():
     tamanho_populacao = 50
     quantidade_geracoes = int(input('Quantidade de gerações: '))
     taxa_selecao = 30
-    taxa_reproducao = 70
 
     # Inicializa a população
     populacao = Cidade.gerar_populacao(tamanho_populacao, num_cidades)
