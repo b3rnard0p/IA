@@ -5,6 +5,7 @@ class Cidade:
         self.rota = rota
         self.aptidao = self.calcular_aptidao()
 
+    # Gera população
     @staticmethod
     def gerar_populacao(tamanho_populacao, num_cidades, permitir_repeticao=False):
         populacao = []
@@ -16,6 +17,7 @@ class Cidade:
             populacao.append(Cidade(rota))
         return populacao
 
+    # Calcula nota
     def calcular_aptidao(self):
         nota = 0
         
@@ -31,6 +33,7 @@ class Cidade:
             
         return nota
     
+    # Define como será impressa a rota
     def __str__(self):
         nomes_cidades = {
             1: "Santa Maria",
@@ -46,12 +49,14 @@ class Cidade:
         rota_nomes = [nomes_cidades[num] for num in self.rota]
         return f'{rota_nomes} - {self.aptidao}'
 
+    #Exibi a população
     @staticmethod
     def exibir_populacao(populacao, numero_geracao):
         print(f'\nGeração {numero_geracao}:')
         for i, individuo in enumerate(populacao, 1):
             print(f"{i}. {individuo}")
 
+    #Seleciona os melhores
     @staticmethod
     def selecionar_por_torneio(populacao, quantidade):
         selecionados = []
@@ -61,6 +66,7 @@ class Cidade:
             selecionados.append(vencedor)
         return selecionados
 
+    # Reproduz os melhores
     @staticmethod
     def reproduzir(populacao, quantidade, num_cidades):
         filhos = []
@@ -93,8 +99,9 @@ class Cidade:
             
             filhos.extend([Cidade(filho1), Cidade(filho2)])
         
-        return filhos[:quantidade]
+        return filhos[:quantidade] 
 
+    # Aplica a mutação no piores da geração
     @staticmethod
     def aplicar_mutacao(populacao, elite_size, taxa_mutacao, estagnacao_prolongada):
         taxa_mutacao_ajustada = min(50, taxa_mutacao + estagnacao_prolongada * 5)
@@ -113,6 +120,7 @@ class Cidade:
                 individuo.aptidao = individuo.calcular_aptidao()
         return populacao
 
+    # Verifica a estagnação
     @staticmethod
     def lidar_com_estagnacao(populacao, tamanho_populacao, num_cidades, historico_aptidao):
         estagnacao_prolongada = 0
@@ -136,11 +144,3 @@ class Cidade:
                 estagnacao_prolongada = max(0, estagnacao_prolongada - 1)
         
         return populacao, estagnacao_prolongada
-
-    @staticmethod
-    def reiniciar_populacao_por_estagnacao(populacao, tamanho_populacao, num_cidades):
-        print("\nEstagnação crítica! Reiniciando população...")
-        melhor = min(populacao, key=lambda x: x.aptidao)
-        nova_populacao = [melhor]
-        nova_populacao.extend(Cidade.gerar_populacao(tamanho_populacao-1, num_cidades))
-        return nova_populacao
