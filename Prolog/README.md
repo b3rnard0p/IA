@@ -1,5 +1,3 @@
-Claro! Aqui está um resumo sobre o Prolog no formato de um arquivo `README.md`:
-
 # Prolog - Linguagem de Programação Lógica
 
 Prolog (Programming in Logic) é uma linguagem de programação declarativa baseada na lógica formal. Desenvolvida na década de 1970 por Alain Colmerauer e Philippe Roussel, Prolog é especialmente utilizada em áreas que envolvem inteligência artificial e manipulação de conhecimento, como sistemas especialistas, processamento de linguagem natural e resolução de problemas lógicos.
