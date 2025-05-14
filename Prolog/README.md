@@ -78,7 +78,7 @@ soma([H|T], Total) :- soma(T, S), Total is H + S.
 4. *Representação de Conhecimento*: Usado para modelar e raciocinar sobre dados e fatos em diversas áreas.
 
 ### Vantagens
-*: Linguagem compacta e fácil de ler.
+*Expressividade*: Linguagem compacta e fácil de ler.
 
 *Solução Natural para Problemas Lógicos*: Ideal para tarefas que envolvem relações e regras complexas.
 
