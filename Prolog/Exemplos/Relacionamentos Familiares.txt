@@ -1,0 +1,13 @@
+% Fatos: relações de parentesco
+pai(joao, maria).
+pai(joao, jose).
+mae(ana, maria).
+mae(ana, jose).
+
+% Regras: inferência de irmãos
+irmao(X, Y) :-
+    pai(P, X), pai(P, Y),
+    mae(M, X), mae(M, Y),
+    X \= Y.
+
+% Consulta: ?- irmao(maria, jose).
