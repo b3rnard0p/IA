@@ -56,12 +56,15 @@ Verificar se um elemento está na lista
 ```
 membro(X, [X | _]).
 membro(X, [_ | T]) :- membro(X, T).
+
 Concatenar duas listas
 concatena([], L, L).
 concatena([H|T], L2, [H|R]) :- concatena(T, L2, R).
+
 Calcular o comprimento de uma lista
 comprimento([], 0).
 comprimento([_|T], N) :- comprimento(T, N1), N is N1 + 1.
+
 Somar elementos de uma lista
 soma([], 0).
 soma([H|T], Total) :- soma(T, S), Total is H + S.
