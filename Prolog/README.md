@@ -25,14 +25,14 @@ Listas são **estruturas de dados fundamentais** em Prolog. Elas são usadas par
 
 ```
 [Elemento1, Elemento2, ..., ElementoN]
+Exemplo: [a, b, c] é uma lista com três elementos.
 ```
-*Exemplo*: [a, b, c] é uma lista com três elementos.
 
 ### 📌 Lista Vazia
 ```
 []
 ```
-###📌 Cabeça e Cauda
+### 📌 Cabeça e Cauda
 
 Cada lista é composta de Cabeça (Head) e Cauda (Tail):
 
