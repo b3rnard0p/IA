@@ -50,7 +50,7 @@ X = a
 Y = [b, c]
 ```
 
-###📌 Exemplos de Predicados com Listas
+### 📌 Exemplos de Predicados com Listas
 
 Verificar se um elemento está na lista
 ```
