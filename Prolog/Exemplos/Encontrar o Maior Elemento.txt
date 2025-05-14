@@ -1,0 +1,7 @@
+% Regra: encontrar o maior elemento de uma lista
+maior([X], X).
+maior([X|T], M) :-
+    maior(T, M1),
+    (X > M1 -> M = X ; M = M1).
+
+% Consulta: ?- maior([3, 9, 5, 2], M).
