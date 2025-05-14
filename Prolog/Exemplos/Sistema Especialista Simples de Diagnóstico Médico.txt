@@ -1,0 +1,12 @@
+% Fatos: sintomas
+sintoma(joao, febre).
+sintoma(joao, tosse).
+sintoma(joao, dor_de_garganta).
+
+% Regras: diagnóstico com base nos sintomas
+tem_gripe(Pessoa) :-
+    sintoma(Pessoa, febre),
+    sintoma(Pessoa, tosse),
+    sintoma(Pessoa, dor_de_garganta).
+
+% Consulta: ?- tem_gripe(joao).
