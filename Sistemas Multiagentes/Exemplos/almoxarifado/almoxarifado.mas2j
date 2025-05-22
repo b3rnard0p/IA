@@ -1,0 +1,9 @@
+MAS almoxarifado {
+
+    environment: example.Env(10)
+
+    agents: robo1;
+            robo2;
+
+    aslSourcePath: "src/agt";
+}
